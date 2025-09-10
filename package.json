@@ -8,11 +8,13 @@
     "Amila Welihinda <amilajack@gmail.com> (https://amilajack.com/)"
   ],
   "license": "MIT",
-  "main": "lib/parallel.js",
+  "main": "./lib/paralleljs.js",
+  "types": "./lib/index.d.ts",
+  "type": "module",
   "scripts": {
     "lint": "eslint lib",
-    "test": "jasmine-node --verbose test/specs",
-    "build": "echo 'No need to build -  but we need the command to let CI pass'"
+    "test": "vitest",
+    "build": "vite build"
   },
   "repository": {
     "type": "git",
@@ -32,20 +34,22 @@
     "webworkers"
   ],
   "devDependencies": {
-    "@babel/core": "7.12.3",
-    "@babel/plugin-proposal-class-properties": "7.12.1",
-    "babel-eslint": "^10.1.0",
-    "eslint": "7.15.0",
-    "eslint-config-bliss": "5.0.0",
-    "is-ci": "^3.0.1",
-    "jasmine-node": "^3.0.0",
-    "q": "^1.5.1"
+    "@babel/core": "^7.28.4",
+    "@eslint/js": "^9.35.0",
+    "@types/node": "^24.3.1",
+    "eslint": "^9.35.0",
+    "is-ci": "^4.1.0",
+    "typescript": "^5.9.2",
+    "typescript-eslint": "^8.43.0",
+    "vite": "7.1.5",
+    "vite-plugin-dts": "4.5.4",
+    "vitest": "3.2.4"
   },
   "browser": {
     "child_process": false
   },
   "engines": {
-    "node": ">=v14.18.1"
+    "node": ">=v18.18.0"
   },
   "testling": {
     "scripts": [

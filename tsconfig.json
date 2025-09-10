@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+        "module": "es2022",
+        "noImplicitAny": true,
+        "target": "es2022",
+        "moduleResolution": "node"
+    },
+    "include": ["src"]
+}
