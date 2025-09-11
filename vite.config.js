@@ -8,12 +8,13 @@ export default defineConfig({
         emptyOutDir: true,
         lib: {
             entry: 'src/parallel.ts',
-            formats: ['es']
+            formats: ['es'],
+            fileName: 'index'
         },
         rollupOptions: {
             external: ['node:child_process']
         },
-        minify: false
+        minify: true
     },
     worker: {
         format: "es"

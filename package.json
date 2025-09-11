@@ -8,10 +8,13 @@
     "Amila Welihinda <amilajack@gmail.com> (https://amilajack.com/)"
   ],
   "license": "MIT",
-  "main": "./lib/paralleljs.js",
+  "main": "./lib/index.js",
+  "module": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "type": "module",
   "scripts": {
+    "prepack": "vite build",
+    "install": "vite build",
     "lint": "eslint lib",
     "test": "vitest",
     "build": "vite build"
@@ -52,51 +55,5 @@
   },
   "engines": {
     "node": ">=v18.18.0"
-  },
-  "testling": {
-    "scripts": [
-      "lib/parallel.js",
-      "test/jasmine/jasmine.js",
-      "test/jasmine/jasmine.tap_reporter.js",
-      "test/specs/*.js",
-      "test/runner.js"
-    ],
-    "browsers": [
-      "ie/9..latest",
-      "chrome/22..latest",
-      "firefox/16..latest",
-      "safari/latest",
-      "opera/11.0..latest",
-      "iphone/6",
-      "ipad/6",
-      "android-browser/latest"
-    ]
-  },
-  "babel": {
-    "presets": [
-      [
-        "@babel/preset-env",
-        {
-          "targets": {
-            "chrome": "58",
-            "node": "10"
-          }
-        }
-      ]
-    ]
-  },
-  "eslintConfig": {
-    "parser": "babel-eslint",
-    "extends": "bliss",
-    "env": {
-      "jest": false,
-      "jasmine": true,
-      "browser": true
-    }
-  },
-  "renovate": {
-    "extends": [
-      "bliss"
-    ]
   }
 }
