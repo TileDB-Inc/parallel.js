@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import Parallel from "../";
+import { Parallel } from "../";
 
 const isNode = () =>
   typeof process !== 'undefined' &&

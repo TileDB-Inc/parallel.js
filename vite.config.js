@@ -7,7 +7,7 @@ export default defineConfig({
         outDir: 'lib',
         emptyOutDir: true,
         lib: {
-            entry: 'src/parallel.ts',
+            entry: 'src/index.ts',
             formats: ['es'],
             fileName: 'index'
         },

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import Parallel from '../';
+import { Parallel } from '../';
 
 describe('Performance', () => {
   it(`.map() should be using multi-threading`, async () => {
