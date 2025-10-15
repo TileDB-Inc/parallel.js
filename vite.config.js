@@ -11,13 +11,10 @@ export default defineConfig({
             formats: ['es'],
             fileName: 'index'
         },
-        rollupOptions: {
-            external: ['node:child_process']
-        },
         minify: true
     },
     worker: {
-        format: "es"
+        format: "es",
     },
     plugins: [dts({ rollupTypes: true })]
 })

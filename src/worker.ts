@@ -1,10 +1,9 @@
-import { ChildProcess, fork } from 'node:child_process';
+import type { ChildProcess } from 'node:child_process';
 import type { ParallelWorker } from './types';
 
-// const child_process = await import('child_process').then(x => console.log(Object.keys(x), Object.values(x)));
+const fork = require('child_process').fork as (url: URL) => ChildProcess;
 
 class NodeWorker implements ParallelWorker {
-
   private process: ChildProcess;
   onmessage?: (payload: any) => void;
   onerror?: (err: ErrorEvent) => void;
