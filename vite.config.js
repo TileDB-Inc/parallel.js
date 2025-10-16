@@ -5,6 +5,7 @@ export default defineConfig({
     base: '',
     build: {
         outDir: 'lib',
+        assetsDir: '',
         emptyOutDir: true,
         lib: {
             entry: 'src/index.ts',

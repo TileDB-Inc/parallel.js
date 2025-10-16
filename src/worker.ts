@@ -1,7 +1,8 @@
 import type { ChildProcess } from 'node:child_process';
 import type { ParallelWorker } from './types';
+import { child_process } from './utils';
 
-const fork = require('child_process').fork as (url: URL) => ChildProcess;
+const fork = await import(await child_process()).then(x => x.fork);
 
 class NodeWorker implements ParallelWorker {
   private process: ChildProcess;
@@ -9,6 +10,7 @@ class NodeWorker implements ParallelWorker {
   onerror?: (err: ErrorEvent) => void;
 
   constructor(url: URL) {
+    // @ts-ignore
     this.process = fork(url);
     this.process.on('message', (message) => {
       if (this.onmessage) {

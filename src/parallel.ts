@@ -1,10 +1,6 @@
 import { Operation, OperationState } from "./operation";
+import { isNode } from "./utils";
 import type { ParallelWorker, Timer, Serializable, Callback, MapCallback, ReduceCallback, ElementOf, Done, Options, Environment } from "./types";
-
-const isNode = () =>
-  typeof process !== 'undefined' &&
-  !!process.versions &&
-  !!process.versions.node;
 
 const Worker = isNode() ? await import('./worker').then(x => x.default) : self.Worker;
 

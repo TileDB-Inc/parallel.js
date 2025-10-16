@@ -1,7 +1,4 @@
-const isNode = () =>
-  typeof process !== 'undefined' &&
-  !!process.versions &&
-  !!process.versions.node;
+import { isNode } from './utils';
 
 if (isNode()) {
   process.once('message', (code: string) => {
